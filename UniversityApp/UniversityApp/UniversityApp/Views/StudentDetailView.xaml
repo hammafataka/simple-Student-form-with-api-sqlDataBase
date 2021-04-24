@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UniversityApp.Views.StudentDetailView"
+             Title="Student Detail"
+             >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+            Text="Add"
+            Command="{Binding AddCommand}"
+            Order="Primary"
+            Priority="0"
+            />
+
+        <ToolbarItem 
+            Text="Update"
+            Command="{Binding UpdateCommand}"
+            Order="Primary"
+            Priority="0"
+            />
+
+        <ToolbarItem 
+            Text="Delete"
+            Command="{Binding DeleteCommand}"
+            Order="Primary"
+            Priority="0"
+            />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="First Name:"
+                       Grid.Column="0"
+                       Grid.Row="0"
+                       FontSize="Large"
+                       TextColor="Black"/>
+
+                <Entry Text="{Binding st.firstName}"
+                       Grid.Column="1"
+                       Grid.Row="0"
+                       FontSize="Large"
+                       TextColor="OrangeRed"/>
+
+                <Label Text="Last Name:"
+                       Grid.Column="0"
+                       Grid.Row="1"
+                       FontSize="Large"
+                       TextColor="Black"/>
+                <Entry Text="{Binding st.lastName}"
+                       Grid.Column="1"
+                       Grid.Row="1"
+                       FontSize="Large"
+                       TextColor="OrangeRed"/>
+                <Label Text="Semester:"
+                       Grid.Column="0"
+                       Grid.Row="2"
+                       FontSize="Large"
+                       TextColor="Black"/>
+                <Entry Text="{Binding st.semester}"
+                       Grid.Column="1"
+                       Grid.Row="2"
+                       FontSize="Large"
+                       TextColor="OrangeRed"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

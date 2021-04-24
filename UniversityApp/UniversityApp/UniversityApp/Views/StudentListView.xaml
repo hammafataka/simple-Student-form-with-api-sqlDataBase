@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UniveristyApp.Views.StudentListView"
+             Title="Students"
+             >
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+            Text="Add"
+            Command="{Binding GoToNewCommand}"
+            Priority="0"
+            Order="Primary"
+            />
+
+
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        
+    
+    <StackLayout Margin="10">
+        <CollectionView ItemsSource="{Binding Student}"
+                        SelectionMode="Single"
+                        SelectedItem="{Binding SelectedStudent}"
+                        SelectionChangedCommand="{Binding GoToDetailCommand}"
+                        >
+            <CollectionView.ItemTemplate >
+                <DataTemplate x:Name="datatt">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Label
+                               x:Name="fistnamelbl"
+                               Text="{Binding firstName}"
+                               FontSize="Large"
+                               Grid.Row="0"
+                               Grid.Column="0"
+                               TextColor="Black"
+                               />
+                        <Label 
+                               x:Name="lastnamelbl"
+                               Text="{Binding lastName}"
+                               FontSize="Large"
+                               Grid.Row="0"
+                               Grid.Column="1"
+                               TextColor="Black"
+                               />
+
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+             
+        </CollectionView>
+        
+
+    </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>
