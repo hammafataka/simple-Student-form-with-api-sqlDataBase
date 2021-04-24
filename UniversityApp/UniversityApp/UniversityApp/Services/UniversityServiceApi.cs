@@ -16,7 +16,7 @@ namespace UniveristyApp.Services
 {
     public class UniversityServiceApi
     {
-        public const string ApiUrl = "http://192.168.42.1:5014";
+        public const string ApiUrl = "Your_ip_Goes_here_With_Url;
         public static async Task<List<T>> GetItems<T>(string Controller) where T : new()
         {
             List<T> list = new List<T>();
